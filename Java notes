@@ -1,0 +1,66 @@
+I'll walk you through setting up this Spring Boot + Thymeleaf project in IntelliJ IDEA from scratch, step by step.
+Step 1: Create a New Spring Boot Project
+Open IntelliJ IDEA
+Click File → New → Project
+In the left panel, select Spring Initializr
+Fill in the details:
+Name: thymeleafsample
+Group: com.example
+Artifact: thymeleafsample
+Language: Java
+Type: Maven
+Java version: 17
+Packaging: Jar
+Click Next
+Step 2: Add Dependencies
+On the dependencies screen, search for and select:
+✅ Spring Web (under Web)
+✅ Thymeleaf (under Template Engines)
+✅ Spring Security (under Security)
+✅ Spring Data JPA (under SQL)
+✅ MySQL Driver (under SQL)
+✅ Lombok (under Developer Tools)
+Click Create.
+Step 3: Set Up MySQL Database
+Before running the app, create the database and a test user.
+Open MySQL Workbench or any MySQL client and run:
+Sql
+Step 4: Configure application.properties
+Open src/main/resources/application.properties and replace its contents with:
+Properties
+Change spring.datasource.password to match your MySQL root password.
+Step 5: Create the Package Structure
+In src/main/java/com/example/thymeleafsample/, right-click and create these packages:
+Code
+Step 6: Create User.java (Entity)
+Inside the base package (com.example.thymeleafsample), create User.java:
+Java
+Step 7: Create UserRepository.java
+Inside the repository package, create UserRepository.java:
+Java
+Step 8: Create CustomUserDetailsService.java
+Inside the security package:
+Java
+Step 9: Create SecurityConfig.java
+Inside the security package:
+Java
+Step 10: Create AuthController.java
+Inside the controller package:
+Java
+Step 11: Create Thymeleaf Templates
+In src/main/resources/templates/, create two HTML files:
+login.html
+Html
+home.html
+Html
+Step 12: Run the Application
+Open ThymeleafsampleApplication.java
+Click the green ▶ Run button next to the main method
+Wait for the console to show Started ThymeleafsampleApplication
+Open your browser and go to: http://localhost:8080/login
+Log in with:
+Username: admin
+Password: 123456
+Final Project Structure
+Code
+Let me know if you hit any errors during setup — paste the console output and I'll help you debug it!
